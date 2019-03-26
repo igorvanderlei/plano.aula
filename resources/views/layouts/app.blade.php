@@ -34,7 +34,7 @@ body{
 }
 
 .panel-body {
-	background-color: rgba(240,240,240, 0.5);
+	background-color: rgba(240,240,240, 0.8);
 }
 
 div.panel {
@@ -131,13 +131,7 @@ div.stars {
   float:right;
 }
 
-footer {
-  background-color: gainsboro;
-  height: 60px;
-  width: 100%;
-  z-index: 1;
-  bottom: 0px;
-}
+
 
 </style>
 
@@ -288,8 +282,7 @@ footer {
                         @endif
             </ul>
             <ul class="nav navbar-nav">
-                <li> <a href="https://mega.nz/#F!nvIDkYpa!t81vSMW9Q7FD9Y0MoY9ukw">Download</a></li>
-                <li ><a href="{{ route('/plano/new') }}">Enviar plano</a></li>
+
                 @if (Auth::guard()->check())
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gerenciar<b class="caret"></b></a>
@@ -339,10 +332,10 @@ footer {
                        </ul>
 
                        </li>
-
                     @endforeach
 
                     </ul>
+                    <li ><a href="{{ route('/plano/new') }}">Enviar plano</a></li>
                 </li>
 
             </ul>
@@ -371,8 +364,7 @@ footer {
                         @endif
             </ul>
             <ul class="nav navbar-nav">
-                <li> <a href="{{ route('inicio') }}">Download</a></li>
-                <li ><a href="{{ route ('/plano/new') }}">Enviar plano</a></li>
+
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educação Infantil<b class="caret"></b></a>
                     <ul class="dropdown-menu multi-level">
@@ -414,6 +406,7 @@ footer {
                     @endforeach
 
                     </ul>
+                    <li ><a href="{{ route ('/plano/new') }}">Enviar plano</a></li>
                 </li>
 
             </ul>
@@ -425,7 +418,7 @@ footer {
     </div>
 
 <footer class="container-fluid text-center">
-  <center>Em parceria com: <a href="http://garanhuns.pe.gov.br/secretarias-e-orgaos/secretaria-de-educacao/"><img src="{{asset('images/seduc.png')}}" style = "margin-left: 10px" height="60" width="150" ></a></center>
+  <center><a href="http://garanhuns.pe.gov.br/secretarias-e-orgaos/secretaria-de-educacao/"><img src="{{asset('images/seduc.png')}}" style = "margin-left: 10px" height="60" width="150" ></a></center>
 </footer>
 </div>
 <script defer="defer" src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>

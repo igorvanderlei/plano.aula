@@ -335,6 +335,15 @@ div.stars {
                     @endforeach
 
                     </ul>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Softwares<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-level">
+                        @foreach ($listaSoftwares as $soft)
+                        <li><a href="{{ route('/plano/busca', ['termo' => $soft->software]) }}">{{$soft->software}}</a></li>
+                        @endforeach
+
+                        </ul>
+                    </li>
                     <li ><a href="{{ route('/plano/new') }}">Enviar plano</a></li>
                 </li>
 
@@ -404,6 +413,16 @@ div.stars {
 
                        </li>
                     @endforeach
+
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Softwares<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-level">
+                        @foreach ($listaSoftwares as $soft)
+                        <li><a href="{{ route('/plano/busca', ['termo' => $soft->software]) }}">{{$soft->software}}</a></li>
+                        @endforeach
+
+                        </ul>
+                    </li>
 
                     </ul>
                     <li ><a href="{{ route ('/plano/new') }}">Enviar plano</a></li>

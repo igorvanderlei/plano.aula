@@ -29,7 +29,7 @@ class VariaveisGlobais
       }])->get();
 
 		$unidadesMenu = \App\Areatematica::withCount(['planos' => function ($query){
-				$query->where('nivel', '=', '2')->where('verificado', '=', true);      
+				$query->where('nivel', '=', '2')->where('verificado', '=', true);
       }])->get();
 
       $a = \App\Plano::select("software")->distinct()->get();
@@ -40,7 +40,7 @@ class VariaveisGlobais
     	\View::share('areasMenu', $areasMenu);
     	\View::share('componentesMenu', $componentesMenu);
     	\View::share('unidadesMenu', $unidadesMenu);
-
+      \View::share('listaSoftwares', $a);
     	\View::share('values',json_encode($a));
         return $next($request);
     }

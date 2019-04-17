@@ -128,6 +128,9 @@ class PlanoController extends Controller
 		$planos = \App\Plano::where('software', 'ilike', '%' . $request->termo . '%')
 													->where('verificado', '=', true)
 													->paginate(9);
+		if(count($planos) == 0){
+			session()->flash('fail', 'Nenhum plano de aula encontrado');
+		}
 		return view("listarPlanos", ["planos" => $planos]);
     }
 

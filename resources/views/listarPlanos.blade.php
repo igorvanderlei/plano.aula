@@ -6,7 +6,12 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
                 	<div class="row">
-                			@foreach($planos as $plano)
+                    @if(session('fail'))
+								        <div class="alert alert-danger">
+									      <p>{{session('fail')}}</p>
+					              </div>
+                    @else
+                      @foreach($planos as $plano)
                 			<div class="col-sm-3 folha">
                 				<center><p class="titulo">{{ $plano->software }}</p></center>
                 				<hr class='separador'>
@@ -24,7 +29,7 @@
                 			@endforeach
                 	</div>
                   {{ $planos->links() }}
-
+                  @endif
         </div>
     </div>
 </div>
